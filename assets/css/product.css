@@ -1,0 +1,171 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("./../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: K2D;
+  src: url("./../fonts/K2D-Bold.ttf");
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: OpenSans;
+  background-color: #f6ddde;
+  font-size: 14pt;
+}
+
+hr {
+  margin: 10px 0;
+  border: solid 1px black;
+}
+
+a {
+  transition: color 0.3s ease;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: #BF148F;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.products {
+  margin-top: 70px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+@media (width < 1120px) {
+  .products {
+    width: 95%;
+  }
+}
+.products > .product {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.products > .product > * {
+  border-radius: 15px;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+.products > .product > img {
+  object-fit: contain;
+  padding: 15px;
+  background-color: white;
+}
+.products > .product > .info {
+  padding: 25px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  background-color: #D4BEC0;
+}
+.products > .product > .info h1 {
+  font-weight: bold;
+  color: #5B3838;
+  font-size: 25px !important;
+}
+.products > .product > .info h2 {
+  margin-top: 15px;
+  color: #614748;
+  font-size: 20px;
+}
+.products > .product > .info p {
+  color: #614748;
+  font-weight: bold;
+  font-size: 15px;
+}
+.products > .product > .info button {
+  border-radius: 15px;
+  text-align: center;
+  background-color: #BF148F;
+  padding: 7px 15px;
+  color: white;
+  transition: background-color 0.5s ease;
+  min-width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  padding: 12px 20px;
+  margin: 0 auto 0 auto;
+}
+.products > .product > .info button:hover {
+  background-color: #8c0c68;
+}
+.products > .product > .info .price {
+  color: #A46E6E;
+  font-size: 30px;
+  font-weight: bold;
+}
+.products .reviews {
+  margin-top: 100px;
+}
+.products .reviews > h1 {
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  padding: 0 35px 10px 35px;
+}
+.products .reviews .cards > p {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/*# sourceMappingURL=product.css.map */

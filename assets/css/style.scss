@@ -1,0 +1,167 @@
+@import "variable";
+@import "default";
+.main {
+	@include widthMain;
+	gap: 15px;
+	> h1 {
+		@include h1;
+		text-align: center;
+	}
+
+	.slider1 {
+		padding: 15px 15px 15px 0;
+		.embla__slide {
+			> div {
+				margin: auto;
+				@include card;
+				a {
+					background-color: transparent !important;
+					color: #03A7A7 !important;
+					transition: color 0.3s ease;
+					&:hover {
+						color: $btnColor !important;
+					}
+				}
+				@media (width < 1300px) {
+					margin: auto;
+				}
+			}
+		}
+	}
+	.description-printer {
+		margin-top: 70px;
+		display: flex;
+		gap: 30px;
+		justify-content: space-between;
+		align-items: center;
+		> div {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			position: relative;
+			>h1 {
+				font-size: 45px;
+				font-family: K2D, sans-serif;
+				border-bottom: 1px solid black;
+				padding-left: 6px;
+				padding-bottom: 6px;
+			}
+			.star {
+				position: absolute;
+				left: -50px;
+			}
+		}
+		@media (width < 780px) {
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0;
+			.star {
+				right: 50px;
+				left: auto !important;
+			}
+			> div {
+				>h1 {
+					font-size: 35px;
+				}
+				> p {
+					font-size: 15px;
+				}
+			}
+		}
+		img {
+			max-width: 350px;
+		}
+	}
+	.description {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 200px;
+		.person {
+			max-width: 200px;
+			position: absolute;
+			left: 10%;
+			bottom: 100%;
+		}
+		.arrow {
+			z-index: 1;
+			max-width: 115px;
+			right: 40%;
+			top: 90%;
+			position: absolute;
+		}
+
+		@media (width < 700px) {
+			gap: 150px;
+			.person {
+				max-width: 150px;
+			}
+			.arrow {
+				z-index: 1;
+				max-width: 90px;
+				right: 30%;
+				top: 92%;
+				position: absolute;
+			}
+
+		}
+	}
+	.description-p {
+		position: relative;
+		border-radius: 15px;
+		width: 100%;
+		padding: 30px 100px;
+		color: white;
+		background-color: $colorCard;
+		text-align: center;
+		@media (width < 700px) {
+			padding: 30px 50px;
+			font-size: 15px;
+		}
+	}
+	.description-second {
+		padding: 50px 0 50px 0;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		@media (width < 1200px ) {
+			p {
+				font-size: 15px;
+			}
+			img {
+				width: 300px;
+			}
+		}
+		@media (width < 780px ) {
+			gap: 15px;
+			p {
+				text-align: center;
+				font-size: 12px;
+			}
+		}
+	}
+	.catalog {
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+
+		> h1 {
+			text-transform: uppercase;
+			text-align: center;
+			color: $colorH1;
+			font-size: 50px;
+			font-family: K2D, sans-serif;
+			font-weight: bold;
+		}
+		.products {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 45px;
+			> .card {
+				@include card;
+			}
+		}
+	}
+
+}
+

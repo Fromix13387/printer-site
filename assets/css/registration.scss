@@ -1,0 +1,79 @@
+@import "default";
+@import "variable";
+
+.registration {
+  @include widthMain;
+  margin-top: 20px;
+  padding: 10px;
+  align-items: center;
+  gap: 25px;
+  > h1 {
+    @include h1;
+    font-size: 28px;
+    text-align: center;
+  }
+  .form {
+    width: 95%;
+    margin-top: 25px;
+    gap: 15px;
+
+    border-radius: 3px;
+    box-shadow: 0 0 0 23px white, 0 0 0 24px rgb(108, 108, 108);
+    max-width: 500px;
+    > form {
+      > p {
+        text-align: center;
+      }
+      @include form;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      input {
+        @include input;
+      }
+    }
+  }
+  .auth {
+    margin-top: -2px;
+    padding: 10px;
+    position: relative;
+    max-width: 750px;
+    width: 95vw;
+    height: 90px;
+    background-color: #614748;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 18px;
+     a {
+      @include colorRef;
+    }
+    .devushka, .paren {
+      position: absolute;
+      content: "";
+      bottom: calc(100% - 2px);
+      height: 450px;
+      width: 200px;
+    }
+    .paren {
+      right: -28px;
+      //height: ;
+    }
+    .devushka {
+      left: -28px;
+    }
+    @media (width < 780px) {
+      .devushka, .paren {
+        display: none;
+      }
+    }
+  }
+}

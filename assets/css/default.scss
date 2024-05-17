@@ -1,0 +1,46 @@
+@import "variable";
+@font-face {
+  font-family: OpenSans;
+  src: url("./../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: K2D;
+  src: url('./../fonts/K2D-Bold.ttf');
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: OpenSans;
+  background-color: $bgColor;
+  font-size: 14pt;
+}
+
+hr {
+  margin: 10px 0;
+  border: solid 1px black;
+}
+a {
+  transition: color .3s ease;
+  color: black;
+  cursor:pointer;
+  text-decoration: none;
+  &:hover {
+    color: $hoverRef;
+  }
+}
+
+img {
+  max-width:100%;
+  object-fit: cover;
+}

@@ -1,0 +1,21 @@
+@import "default";
+@import "variable";
+
+.contacts {
+  @include widthMain;
+  gap: 30px;
+  > h1 {
+    @include h1;
+  }
+  > p {
+    background-color: rgba(191, 216, 211, 0.7);
+    padding: 15px;
+    @media (width < 780px) {
+      font-size: 15px;
+    }
+  }
+}
+.map {
+  width: 100%;
+  aspect-ratio: 1/0.4;
+}

@@ -1,0 +1,193 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("./../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: K2D;
+  src: url("./../fonts/K2D-Bold.ttf");
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: OpenSans;
+  background-color: #f6ddde;
+  font-size: 14pt;
+}
+
+hr {
+  margin: 10px 0;
+  border: solid 1px black;
+}
+
+a {
+  transition: color 0.3s ease;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: #BF148F;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+.about {
+  margin-top: 70px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+@media (width < 1120px) {
+  .about {
+    width: 95%;
+  }
+}
+.about .description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.about .description > p {
+  font-style: italic;
+}
+@media (width < 780px) {
+  .about .description > p {
+    font-size: 15px;
+  }
+}
+.about h1 {
+  color: #614748;
+  font-size: 38px;
+  font-family: K2D, sans-serif;
+  font-weight: bold;
+}
+@media (width < 780px) {
+  .about h1 {
+    font-size: 25px;
+  }
+  .about h1 > h1 {
+    font-size: 25px;
+  }
+  .about h1 > p {
+    font-size: 15px;
+  }
+}
+.about .description-down {
+  display: flex;
+  align-items: end;
+  position: relative;
+}
+.about .description-down > div {
+  position: relative;
+}
+.about .description-down > div::after {
+  content: "";
+  z-index: -1;
+  bottom: 0;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  background: url("/assets/images/person3.png") no-repeat;
+  background-size: contain;
+  right: -200px;
+}
+@media (width < 1120px) {
+  .about .description-down > div::after {
+    display: none;
+  }
+}
+.about .image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
+  margin: auto;
+}
+.about .image > .circle {
+  background-color: rgba(215, 169, 163, 0.32);
+  border-radius: 50%;
+  width: 80px;
+  aspect-ratio: 1/1;
+}
+.about .image img {
+  max-width: 250px;
+  margin: 0 20px 0 20px;
+}
+@media (width < 1400px) {
+  .about .image {
+    width: 90%;
+  }
+}
+@media (width < 1120px) {
+  .about .image {
+    gap: 10px;
+  }
+  .about .image img {
+    max-width: 200px;
+    margin: 0 10px 0 10px;
+  }
+}
+@media (width < 700px) {
+  .about .image .circle {
+    display: none;
+  }
+  .about .image img {
+    max-width: 300px;
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

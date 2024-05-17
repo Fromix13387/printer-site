@@ -1,0 +1,40 @@
+@import "default";
+@import "variable";
+.authorization {
+  @include widthMain;
+  margin-top: 20px;
+  padding: 10px;
+  align-items: center;
+  gap: 25px;
+  > h1 {
+    @include h1;
+    font-size: 28px;
+    text-align: center;
+  }
+  > form {
+    max-width: 350px;
+    width: 99%;
+    @include form;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    input {
+      @include input;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      a {
+        @include colorRef;
+      }
+      > p {
+        font-size: 15px;
+        text-align: center;
+      }
+    }
+
+  }
+}

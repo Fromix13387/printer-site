@@ -1,0 +1,42 @@
+@import "../variable";
+@import "../default";
+
+.footer {
+  img {
+    max-width: 80px;
+  }
+  background-color: $colorFooter;
+  width: 100%;
+  margin-top: 80px;
+
+  > div {
+    margin: auto;
+    @include widthMain;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 50px 10px;
+    > div.ref {
+      display: flex;
+      gap: 15px;
+      white-space: nowrap;
+      justify-content: space-between;
+      min-width: 60%;
+    }
+    @media (width < 710px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      div.ref {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+
+      }
+    }
+  }
+}

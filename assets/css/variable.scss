@@ -1,0 +1,169 @@
+$bgColor: #f6ddde;
+$hoverRef: #BF148F;
+$colorH1: #614748;
+$colorCard: #E9286D;
+$grayText: #636363;
+$colorFooter: #FFB2B7;
+$btnColor: #BF148F;
+
+@mixin widthMain {
+  margin-top: 70px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  @media (width < 1120px) {
+    width: 95%
+  }
+}
+@mixin card {
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  position: relative;
+  min-height: 400px;
+  padding: 10px;
+  &:after {
+    border-radius: 15px;
+    z-index: -1;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 12px;
+    left: 10px;
+    background-color: #cbc2cb;
+  }
+  img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+  }
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    h1 {
+      font-size: 15px;
+    }
+    .price {
+      font-size: 25px;
+      font-weight: bold;
+      padding: 10px 0 10px 0;
+    }
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      p {
+        font-size: 14px;
+        background-color: rgba(119, 119, 119, 0.1);
+        border-radius: 15px;
+        padding: 5px 15px;
+        width: fit-content;
+      }
+    }
+    padding: 15px;
+    > a {
+      margin-top: 15px;
+      background-color: $hoverRef;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 15px;
+    }
+  }
+}
+@mixin h1 {
+  color: $colorH1;
+  font-size: 38px;
+  font-family: K2D, sans-serif;
+  font-weight: bold;
+
+  @media (width < 780px) {
+    font-size: 25px;
+    >h1 {
+      font-size: 25px;
+    }
+    > p {
+      font-size: 15px;
+    }
+  }
+}
+@mixin button {
+  border-radius: 15px;
+  text-align: center;
+  background-color: $btnColor;
+  padding: 7px 15px;
+  color: white;
+  transition: background-color 0.5s ease;
+  min-width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    background-color: #8c0c68;
+  };
+}
+@mixin input {
+  background-color: #ECB3B6;
+  padding: 8px 12px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  &::placeholder {
+    color: #88696A;
+  }
+  &:focus {
+    box-shadow: 0 0 0 1px #c42b31;
+  }
+}
+@mixin form {
+  background-color: #FFCDCF;
+  padding: 25px;
+  //border-radius: 6px;
+  border: 1px solid gray;
+  label {
+    color: $colorH1;
+    font-size: 15px;
+    margin-left: 5px;
+    font-weight: bold;
+  }
+  button {
+    @include button;
+    //background-color: $btnColor;
+    //color: #ffffff;
+    //font-weight: bold;
+    //transition: background-color 0.5s ease;
+    border: none;
+    margin: auto;
+    //border-radius: 15px;
+    padding: 8px 15px;
+    //font-size: 15px;
+    //font-family: OpenSans;
+    //cursor: pointer;
+    //&:hover {
+    //  background-color: #376e6e;
+    //}
+  }
+}
+
+@mixin colorRef {
+  transition: color 0.3s ease;
+  color: #FB253E;
+  &:hover {
+    color: #ff6071;
+  }
+}
+h1, h2, h3, h4, h5,h6, p {
+  font-family: K2D, sans-serif;
+}
+.error {
+color: red;
+  }
+.success {
+  color: #13b756;
+}
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
