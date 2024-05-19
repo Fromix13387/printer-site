@@ -3,6 +3,9 @@
 .header {
   margin-top: 10px;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 3;
   padding: 10px 25px;
   display: flex;
   gap: 50px;
@@ -31,12 +34,14 @@
     > a {
       @include button;
     }
+
   }
   .prof {
     width: fit-content;
     margin: 0;
     gap: 15px;
     display: flex;
+    position: relative;
     align-items: center;
     > button, a {
       border: none;
@@ -46,6 +51,37 @@
       cursor: pointer;
       &:hover {
         color: $hoverRef;
+      }
+    }
+    .basket {
+      padding: 10px;
+      margin-left: 30px;
+      position: relative;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background-color: #03A7A7;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      > img {
+        object-fit: contain;
+      }
+      &:hover {
+        background-color: #028585;
+      }
+      .count {
+        position: absolute;
+        top: -5px;
+        height: 25px;
+        font-size: 16px;
+        text-align: center;
+        width: 25px;
+        justify-content: center;
+        right: -5px;
+        color: white;
+        border-radius: 50%;
+        padding: 2px;
+        background-color: $hoverRef;
       }
     }
   }

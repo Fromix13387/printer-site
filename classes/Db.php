@@ -40,4 +40,14 @@ class Db
         return $this->stmt->execute($params);
     }
 
+    public function getCountries(): bool|array
+    {
+        return $this->query("SELECT * FROM countries")->fetchAll();
+    }
+
+    public function getCategories(): bool|array
+    {
+        return $this->query('SELECT * FROM categories')->fetchAll();
+    }
+
 }

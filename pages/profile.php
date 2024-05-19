@@ -17,40 +17,41 @@
     <link rel="stylesheet" href="../assets/css/profile.css">
     <title>Мой профиль</title>
 </head>
-<body class="app">
-<?php include 'components/Top.php' ?>
-<?php include 'components/header.php' ?>
+<body>
+<div id="app">
+    <?php include 'components/Top.php' ?>
+    <?php include 'components/header.php' ?>
     <div class="profile">
         <h1>Профиль</h1>
         <form action="#" method="post">
             <?php
-                if (isset($_POST['btn-edit'])) {
-                    require_once __DIR__."/../controllers/check_fields.php";
-                    $name = $_POST['name'];
-                    $surname = $_POST['surname'];
-                    $patronymic = $_POST['patronymic'];
-                    $login = $_POST['login'];
-                    $email = $_POST['email'];
-                    $password = $_POST['password'];
-                    $password_confirm = $_POST['password_confirm'];
+            if (isset($_POST['btn-edit'])) {
+                require_once __DIR__ . '/../controllers/check_fields.php';
+                $name = $_POST['name'];
+                $surname = $_POST['surname'];
+                $patronymic = $_POST['patronymic'];
+                $login = $_POST['login'];
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $password_confirm = $_POST['password_confirm'];
 
-                    $answer = check_fields($name, $surname, $patronymic, $login, $email, $password,  $password_confirm,'edit');
-                    if (gettype($answer) === 'string') echo $answer;
+                $answer = check_fields($name, $surname, $patronymic, $login, $email, $password, $password_confirm, 'edit');
+                if (gettype($answer) === 'string') echo $answer;
+                else {
+                    if ($_SESSION['login'] !== $login && $users->getUserByLogin($login)) echo "<p class='error'>Пользователь с таким логином уже есть</p>";
                     else {
-                        if ($_SESSION['login'] !== $login && $users->getUserByLogin($login)) echo "<p class='error'>Пользователь с таким логином уже есть</p>";
+                        $answer = $users->edit($name, $surname, $patronymic, $login, $email, $password, $_SESSION['login']);
+                        if (!$answer) echo "<p class='error'>Что-то пошло не так</p>";
                         else {
-                           $answer = $users->edit($name, $surname, $patronymic, $login, $email, $password, $_SESSION['login']);
-                           if (!$answer) echo "<p class='error'>Что-то пошло не так</p>";
-                           else {
-                               echo "<p class='success'>Успешно изменили данные</p>";
-                               $_SESSION['login'] = $login;
-                               header('Location: ../pages/profile.php');
-                           }
+                            echo "<p class='success'>Успешно изменили данные</p>";
+                            $_SESSION['login'] = $login;
+                            header('Location: ../pages/profile.php');
                         }
                     }
                 }
-                if (!isset($_SESSION['login'])) header('Location: ../index.php');
-                $user = $users->getUserByLogin($_SESSION['login'])
+            }
+            if (!isset($_SESSION['login'])) header('Location: ../index.php');
+            $user = $users->getUserByLogin($_SESSION['login'])
             ?>
 
             <div>
@@ -84,6 +85,9 @@
             <button name='btn-edit'>Редактировать</button>
         </form>
     </div>
-<?php include 'components/footer.php' ?>
+    <?php include 'components/footer.php' ?>
+</div>
+<script src='/assets/js/vue.global.js'></script>
+<script src='/assets/js/main.js'></script>
 </body>
 </html>

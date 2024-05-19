@@ -1,6 +1,8 @@
 @import "default";
 @import "variable";
-
+.app {
+  @include backgroundBody;
+}
 .contacts {
   @include widthMain;
   gap: 30px;

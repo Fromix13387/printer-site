@@ -11,6 +11,10 @@ session_start();
     <title>Document</title>
 </head>
 <body>
+<div class="app">
 
+</div>
+<script src='/assets/js/vue.global.js'></script>
+<script src='/assets/js/main.js'></script>
 </body>
 </html>

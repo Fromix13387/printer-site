@@ -1,0 +1,265 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: K2D;
+  src: url("/assets/fonts/K2D-Bold.ttf");
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: OpenSans;
+  background-color: #f6ddde;
+  font-size: 14pt;
+}
+
+hr {
+  margin: 10px 0;
+  border: solid 1px black;
+}
+
+a {
+  transition: color 0.3s ease;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: #BF148F;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.app {
+  background: linear-gradient(#FFDCDE, #EBF1EB);
+}
+
+.admin {
+  margin-top: 70px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (width < 1120px) {
+  .admin {
+    width: 95%;
+  }
+}
+.admin .add {
+  background-color: #FFCDCF;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin .add > a {
+  border-radius: 15px;
+  text-align: center;
+  background-color: #BF148F;
+  padding: 7px 15px;
+  color: white;
+  transition: background-color 0.5s ease;
+  min-width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.admin .add > a:hover {
+  background-color: #8c0c68;
+}
+.admin .products {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #FFCDCF;
+  padding: 25px 45px;
+  border-radius: 0 0 15px 15px;
+}
+.admin .products > div {
+  background-color: #FFEAEB;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+}
+.admin .products > div h2 {
+  font-size: 20px;
+}
+.admin .products > div img {
+  object-fit: contain;
+  max-width: 80px;
+}
+.admin .products > div > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.admin .products > div > div .desc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: -3px;
+}
+.admin .products > div > div .desc > p {
+  font-size: 12px;
+  padding: 5px 15px;
+  background-color: rgba(119, 119, 119, 0.1);
+  border-radius: 15px;
+}
+.admin .products > div > div .price {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.admin .products > div > div .title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.admin .products > div > div .title > div {
+  display: flex;
+  gap: 20px;
+}
+.admin .products > div > div .title > div img {
+  width: 25px;
+}
+.admin .products > div > div .title a, .admin .products > div > div .title button {
+  border: none;
+  cursor: pointer;
+}
+.admin .form {
+  background-color: #FFCDCF;
+  padding: 25px;
+  border: 1px solid gray;
+  display: flex;
+  border-radius: 0 0 15px 15px;
+  flex-direction: column;
+  border: none;
+  gap: 15px;
+}
+.admin .form label {
+  color: #614748;
+  font-size: 15px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.admin .form button {
+  border-radius: 15px;
+  text-align: center;
+  background-color: #BF148F;
+  padding: 7px 15px;
+  color: white;
+  transition: background-color 0.5s ease;
+  min-width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  margin: auto;
+  padding: 8px 15px;
+}
+.admin .form button:hover {
+  background-color: #8c0c68;
+}
+.admin .form > img {
+  max-width: 200px;
+}
+.admin .form input, .admin .form select {
+  background-color: #ECB3B6;
+  padding: 8px 12px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  height: 45px;
+}
+.admin .form input::placeholder, .admin .form select::placeholder {
+  color: #88696A;
+}
+.admin .form input:focus, .admin .form select:focus {
+  box-shadow: 0 0 0 1px #c42b31;
+}
+.admin .form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/*# sourceMappingURL=admin.css.map */

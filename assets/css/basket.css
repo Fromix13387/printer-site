@@ -1,0 +1,245 @@
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: K2D;
+  src: url("/assets/fonts/K2D-Bold.ttf");
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: OpenSans;
+  background-color: #f6ddde;
+  font-size: 14pt;
+}
+
+hr {
+  margin: 10px 0;
+  border: solid 1px black;
+}
+
+a {
+  transition: color 0.3s ease;
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+a:hover {
+  color: #BF148F;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: K2D, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: #13b756;
+}
+
+.error, .success {
+  font-size: 14px;
+  text-align: center;
+}
+
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
+.bask {
+  margin-top: 70px;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+@media (width < 1120px) {
+  .bask {
+    width: 95%;
+  }
+}
+.bask .Basket > p {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  font-size: 25px;
+}
+.bask .Basket .title {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  border-bottom: 1px solid #614748;
+  padding-bottom: 10px;
+}
+.bask .Basket .title h1, .bask .Basket .title p {
+  color: #614748;
+}
+.bask .Basket .title p {
+  background-color: #EDD6D8;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+.bask .Basket .numeric {
+  background-color: white;
+  border-radius: 15px;
+  padding: 5px 15px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+  min-width: 120px;
+}
+.bask .Basket .numeric .btn {
+  user-select: none;
+  padding: 0 5px;
+  font-size: 20px !important;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.bask .Basket .numeric .btn:hover {
+  color: #BF148F;
+}
+.bask .Basket .cards {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.bask .Basket .cards .card {
+  display: flex;
+  border-radius: 15px;
+  width: 100%;
+  background-color: rgba(203, 161, 161, 0.21);
+}
+.bask .Basket .cards .card > img {
+  padding: 15px;
+  background-color: white;
+  max-width: 200px;
+  border-radius: 15px 0 0 15px;
+}
+.bask .Basket .cards .card > div {
+  padding: 15px 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.bask .Basket .cards .card > div > h1 {
+  color: #614748;
+  font-size: 25px;
+}
+.bask .Basket .cards .card > div > h3 {
+  color: #614748;
+  font-size: 20px;
+}
+.bask .Basket .cards .card > div .numer {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.bask .Basket .cards .card > div .numer > div {
+  margin: 0;
+}
+.bask .Basket .cards .card > div .desc {
+  display: flex;
+  gap: 15px;
+}
+.bask .Basket .cards .card > div .desc > p {
+  border-radius: 15px;
+  padding: 5px 15px;
+  background-color: rgba(119, 119, 119, 0.1);
+  font-size: 14px;
+}
+.bask .Basket > a {
+  border-radius: 15px;
+  text-align: center;
+  background-color: #BF148F;
+  padding: 7px 15px;
+  color: white;
+  transition: background-color 0.5s ease;
+  min-width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.bask .Basket > a:hover {
+  background-color: #8c0c68;
+}
+@media (width < 530px) {
+  .bask .Basket .cards .card {
+    flex-direction: column;
+  }
+  .bask .Basket .cards .card > img {
+    max-width: 100%;
+    max-height: 200px;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=basket.css.map */

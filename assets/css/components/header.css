@@ -15,6 +15,18 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
 }
 
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
 h1, h2, h3, h4, h5, h6, p {
   font-family: K2D, sans-serif;
 }
@@ -32,15 +44,27 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
 }
 
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
 @font-face {
   font-family: OpenSans;
-  src: url("./../fonts/OpenSans-Regular.ttf");
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
 }
 @font-face {
   font-family: K2D;
-  src: url("./../fonts/K2D-Bold.ttf");
+  src: url("/assets/fonts/K2D-Bold.ttf");
 }
-.app {
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,9 +104,16 @@ img {
   object-fit: cover;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .header {
   margin-top: 10px;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 3;
   padding: 10px 25px;
   display: flex;
   gap: 50px;
@@ -130,6 +161,7 @@ img {
   margin: 0;
   gap: 15px;
   display: flex;
+  position: relative;
   align-items: center;
 }
 .header .prof > button, .header .prof a {
@@ -141,6 +173,37 @@ img {
 }
 .header .prof > button:hover, .header .prof a:hover {
   color: #BF148F;
+}
+.header .prof .basket {
+  padding: 10px;
+  margin-left: 30px;
+  position: relative;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #03A7A7;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.header .prof .basket > img {
+  object-fit: contain;
+}
+.header .prof .basket:hover {
+  background-color: #028585;
+}
+.header .prof .basket .count {
+  position: absolute;
+  top: -5px;
+  height: 25px;
+  font-size: 16px;
+  text-align: center;
+  width: 25px;
+  justify-content: center;
+  right: -5px;
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+  background-color: #BF148F;
 }
 
 /*# sourceMappingURL=header.css.map */

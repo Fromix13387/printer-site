@@ -5,6 +5,8 @@ $colorCard: #E9286D;
 $grayText: #636363;
 $colorFooter: #FFB2B7;
 $btnColor: #BF148F;
+$bgAdmin: #FFCDCF;
+$cardAdmin: #FFEAEB;
 
 @mixin widthMain {
   margin-top: 70px;
@@ -130,23 +132,15 @@ $btnColor: #BF148F;
   }
   button {
     @include button;
-    //background-color: $btnColor;
-    //color: #ffffff;
-    //font-weight: bold;
-    //transition: background-color 0.5s ease;
     border: none;
     margin: auto;
-    //border-radius: 15px;
     padding: 8px 15px;
-    //font-size: 15px;
-    //font-family: OpenSans;
-    //cursor: pointer;
-    //&:hover {
-    //  background-color: #376e6e;
-    //}
+
   }
 }
-
+@mixin backgroundBody {
+  background: linear-gradient(#FFDCDE, #EBF1EB);
+}
 @mixin colorRef {
   transition: color 0.3s ease;
   color: #FB253E;
@@ -166,4 +160,14 @@ color: red;
 .error, .success {
   font-size: 14px;
   text-align: center;
+}
+.noneEl {
+  display: none !important;
+}
+.activeEl {
+  display: flex !important;
+}
+.activeProduct {
+  //background-color: rgb(243, 171, 221) !important;
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
 }

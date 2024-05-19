@@ -1,0 +1,16 @@
+@import "../variable";
+@import "../default";
+.admin-menu {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+  background-color: $bgAdmin;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  > a {
+    color: $colorH1;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,128 @@
+@import "default";
+@import "variable";
+.bask {
+  @include widthMain;
+  margin-top: 20px;
+
+  .Basket {
+
+    > p {
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 150px;
+      font-size: 25px;
+    }
+    .title {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: end;
+      border-bottom: 1px solid $colorH1;
+      padding-bottom: 10px;
+      h1, p {
+        color: $colorH1
+
+      }
+      p {
+        background-color: #EDD6D8;
+        padding: 5px 15px;
+        border-radius: 15px;
+      }
+
+    }
+    .numeric {
+      background-color: white;
+      border-radius: 15px;
+      padding: 5px 15px;
+      display: flex;
+      gap: 5px;
+      justify-content: space-between;
+      align-items: center;
+      width: fit-content;
+      margin: auto;
+      min-width: 120px;
+      p {
+
+      }
+      .btn {
+        user-select: none;
+        padding: 0 5px;
+        font-size: 20px !important;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $hoverRef;
+        }
+      }
+    }
+    .cards {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .card {
+        display: flex;
+        border-radius: 15px;
+        width: 100%;
+        background-color: rgba(203, 161, 161, 0.21);
+        > img {
+          padding: 15px;
+          background-color: white;
+          max-width: 200px;
+          border-radius: 15px 0 0 15px;
+          //object-fit: contain;
+        }
+        > div {
+          padding: 15px 30px;
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 10px;
+          > h1 {
+            color: $colorH1;
+            font-size: 25px;
+          }
+          > h3 {
+            color: $colorH1;
+            font-size: 20px;
+          }
+          .numer {
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            > div {
+              margin: 0;
+            }
+          }
+          .desc {
+            display: flex;
+            gap: 15px;
+            > p {
+              border-radius: 15px;
+              padding: 5px 15px;
+              background-color: rgba(119, 119, 119, 0.1);;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+    > a {
+      @include button;
+    }
+    @media (width < 530px) {
+      .cards {
+        .card {
+          flex-direction: column;
+          > img {
+            max-width: 100% ;
+            max-height: 200px;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

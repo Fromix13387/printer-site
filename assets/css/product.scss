@@ -57,6 +57,9 @@
   }
   .reviews {
     margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
     > h1 {
 
       font-size: 30px;
@@ -64,9 +67,78 @@
       padding: 0 35px 10px 35px;
     }
     .cards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
       > p {
         text-align: center;
         margin-top: 30px;
+      }
+      > div {
+        border-radius: 15px;
+        background-color: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.48);
+        padding: 25px 35px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        > div {
+          display: flex;
+          justify-content: space-between;
+          gap: 10px;
+          flex-wrap: wrap;
+          align-items: center;
+          padding-bottom: 10px;
+          border-bottom: 1px solid black;
+          > h2 {
+            font-size: 20px;
+          }
+          p {
+            font-weight: 500;
+            font-size: 15px;
+          }
+        }
+
+      }
+    }
+    .add-review {
+      @include form;
+      border: none;
+      border-radius: 15px;
+      textarea {
+        @include input;
+        resize: none;
+      }
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  .numeric {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px 15px;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    min-width: 120px;
+    p {
+
+    }
+    .btn {
+      user-select: none;
+      padding: 0 5px;
+      font-size: 20px !important;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $hoverRef;
       }
     }
   }

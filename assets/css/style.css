@@ -15,6 +15,18 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
 }
 
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
 h1, h2, h3, h4, h5, h6, p {
   font-family: K2D, sans-serif;
 }
@@ -32,15 +44,27 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: center;
 }
 
+.noneEl {
+  display: none !important;
+}
+
+.activeEl {
+  display: flex !important;
+}
+
+.activeProduct {
+  box-shadow: 0 0 15px 3px rgba(191, 20, 143, 0.8);
+}
+
 @font-face {
   font-family: OpenSans;
-  src: url("./../fonts/OpenSans-Regular.ttf");
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
 }
 @font-face {
   font-family: K2D;
-  src: url("./../fonts/K2D-Bold.ttf");
+  src: url("/assets/fonts/K2D-Bold.ttf");
 }
-.app {
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,6 +102,10 @@ a:hover {
 img {
   max-width: 100%;
   object-fit: cover;
+}
+
+[v-cloak] {
+  display: none;
 }
 
 .main {

@@ -13,9 +13,10 @@
     <link rel='stylesheet' href='../assets/css/registration.css'>
     <title>Регистрация</title>
 </head>
-<body class="app">
-<?php include 'components/Top.php' ?>
-<?php include 'components/header.php' ?>
+<body>
+<div id="app">
+    <?php include 'components/Top.php' ?>
+    <?php include 'components/header.php' ?>
     <div class="registration">
         <h1>Регистрация</h1>
         <div class="form">
@@ -52,7 +53,7 @@
                 if (isset($_SESSION['login'])) header('Location: ../index.php');
 
                 ?>
-                
+
                 <div>
                     <label for="name">Имя</label>
                     <input name="name" type="text" placeholder="Имя"/>
@@ -91,6 +92,9 @@
             <p>Тогда <a href='authorization.php'>авторизуйтесь!</a></p>
         </div>
     </div>
-<?php include 'components/footer.php' ?>
+    <?php include 'components/footer.php' ?>
+</div>
+<script src='/assets/js/vue.global.js'></script>
+<script src='/assets/js/main.js'></script>
 </body>
 </html>

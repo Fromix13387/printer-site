@@ -18,6 +18,11 @@ class Reviews
         return $this->db->query('SELECT * FROM reviews JOIN users ON reviews.id_user = users.user_id WHERE id_product = ?', [$id_product])->fetchAll();
     }
 
+    public function add($value, $id_product, $login): bool
+    {
+        return $this->db->queryAdd("INSERT INTO reviews (value, id_user, id_product) VALUE (?, (SELECT user_id FROM users WHERE login = ?), ?)", [$value, $login, $id_product]);
+    }
+
 
 
 

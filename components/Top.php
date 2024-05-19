@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="../assets/css/components/Top.css">
+<link rel="stylesheet" href="/assets/css/components/Top.css">
 <div class='top'>
     <div>
         <div class='row'>
-            <a href="../index.php"><img src='../assets/logo.png' alt=''></a>
-            <a href='../index.php'>
+            <a href="/index.php"><img src='/assets/logo.png' alt=''></a>
+            <a href='/index.php'>
                 <h1>Copy Star</h1>
             </a>
         </div>

@@ -1,5 +1,8 @@
 @import "default";
 @import "variable";
+.app {
+  @include backgroundBody;
+}
 .profile {
   @include widthMain;
   margin-top: 20px;

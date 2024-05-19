@@ -1,6 +1,8 @@
 @import "default";
 @import "variable";
-
+.app {
+  @include backgroundBody;
+}
 .about {
   @include widthMain;
   display: flex;
