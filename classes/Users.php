@@ -11,12 +11,12 @@ class Users
 
     public function getUsers(): false|array
     {
-        return $this->db->query('SELECT * FROM users')->fetchAll();
+        return $this->db->query('SELECT *, roles.name as role, users.name as name_u  FROM users JOIN roles ON roles.id = users.id_role')->fetchAll();
     }
 
     public function getUser($id): false|array
     {
-        return $this->db->query('SELECT * FROM users WHERE user_id = ?', [$id])->fetch();
+        return $this->db->query('SELECT *, roles.name as role, users.name as name_u FROM users JOIN roles ON roles.id = users.id_role WHERE user_id = ?', [$id])->fetch();
     }
     public function getUserByLogin($login): false|array
     {
@@ -38,5 +38,18 @@ class Users
             'UPDATE users SET name = ?, surname = ?, patronymic = ?, login = ?, email = ?, password = ? WHERE login = ?', [
             $name, $surname, $patronymic, $login, $email, password_hash($password, PASSWORD_BCRYPT),  $old_login
         ]);
+    }
+
+
+    public function editProfile($name, $surname, $patronymic, $email, $id_role, $user_id): bool
+    {
+        return $this->db->queryAdd('UPDATE users SET name = ?, surname = ?,patronymic = ?,email = ?, id_role = ? WHERE user_id = ?', [
+            $name, $surname, $patronymic, $email, $id_role, $user_id
+        ]);
+    }
+
+    public function delete($user_id): bool
+    {
+        return $this->db->queryAdd('DELETE FROM users WHERE user_id = ?', [$user_id]);
     }
 }

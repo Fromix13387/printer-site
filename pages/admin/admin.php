@@ -1,6 +1,6 @@
 <?php
     session_start();
-
+    if ($_SESSION['role'] !== 2) header('Location: /index.php');
     require_once "classes/Db.php";
     require_once "classes/Products.php";
 

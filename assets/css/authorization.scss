@@ -2,7 +2,7 @@
 @import "variable";
 .authorization {
   @include widthMain;
-  margin-top: 20px;
+  margin: 20px auto auto auto;
   padding: 10px;
   align-items: center;
   gap: 25px;

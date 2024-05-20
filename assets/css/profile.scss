@@ -34,4 +34,51 @@
       @include input;
     }
   }
+
+  .order {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    > div {
+      display: flex;
+      background-color:  #FFCDCF;
+      border-radius: 15px;
+      img {
+        min-width: 250px;
+        max-height: 200px;
+        background-color: white;
+        padding: 15px;
+        border-radius: 15px 0 0 15px;
+      }
+      > div {
+        padding: 15px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        > div {
+          display: flex;
+          gap: 5px;
+          justify-content: space-between;
+          align-items: end;
+          flex-wrap: wrap;
+        }
+        h1 {
+          font-size: 20px;
+
+        }
+        > * {
+          color: $colorH1;
+          font-size: 15px;
+        }
+      }
+    }
+    @media (width < 600px) {
+      > div {
+        flex-direction: column;
+      }
+      
+    }
+  }
 }

@@ -1,6 +1,9 @@
 <?php
 $url = $_SERVER['REQUEST_URI'];
-if (isset($_SESSION['login']) && isset($_POST['btn-leave'])) unset($_SESSION['login']);
+if (isset($_SESSION['login']) && isset($_POST['btn-leave'])) {
+    unset($_SESSION['login']);
+    unset($_SESSION['role']);
+}
 ?>
 
 <link rel='stylesheet' href='/assets/css/components/header.css'>

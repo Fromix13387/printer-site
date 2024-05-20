@@ -1,5 +1,6 @@
 <?php
 session_start();
+if ($_SESSION['role'] !== 2) header('Location: /index.php');
 require_once 'classes/Db.php';
 require_once 'classes/Products.php';
 
@@ -94,7 +95,7 @@ $product = $products->getProduct($_GET['id']);
                     <select name='category'>
                         <?php foreach ($categories as $category) {
                             $select = $category['category_id'] === $product['id_category'] ? 'selected' : '';
-                            echo "<option value='{$category['category_id']}'>{$category['category']}</option>";
+                            echo "<option $select value='{$category['category_id']}'>{$category['category']}</option>";
                         } ?>
                     </select>
                 </div>

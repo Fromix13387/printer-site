@@ -119,6 +119,21 @@ $cardAdmin: #FFEAEB;
     box-shadow: 0 0 0 1px #c42b31;
   }
 }
+@mixin modelAdmin {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: $bgAdmin;
+  padding: 25px 45px;
+  border-radius: 0 0 15px 15px;
+  > div {
+    background-color: $cardAdmin;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+  }
+}
+
 @mixin form {
   background-color: #FFCDCF;
   padding: 25px;

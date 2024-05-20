@@ -54,7 +54,8 @@ const app = Vue.createApp({
 app.component('basket', {
     data() {
         return {
-            data_basket: []
+            data_basket: [],
+            check: false
         }
     },
     async mounted() {
@@ -115,9 +116,42 @@ app.component('basket', {
             }
             return false
         },
+        async saveOrder() {
+            let data = JSON.parse(localStorage.getItem("basket")) ?? {}
+            const res = await fetch("/controllers/save_order.php",{
+                headers: {
+                    "Content-type": 'application/x-www-form-urlencoded'
+                },
+                method: "POST",
+                body: `ids=${Object.keys(data).toString()}&count=${Object.values(data).toString()}`
+            })
+            this.check=true
+            localStorage.removeItem('basket')
+            this.$emit('updateStorage')
+        }
     },
     template: `
- <div class="Basket">
+<div v-if="check" class="check">
+    <p>ООО “Copy star”</p>
+    <p>ИНН 573884628462</p>
+    <p>Россия, 111111, г Челябинск, ул Гагарина, 
+д. 7</p> <br>
+    <p>{{new Date().toLocaleString()}}</p>
+    <div class="cards">
+    <div v-for="el of data_basket">
+    <div>
+    <h1>{{el.name_p}}</h1>
+    <p>{{getProductCount(el.product_id)}} шт.</p>
+</div>
+        
+        <p>{{getPriceProduct(el.product_id)}}.00$</p>
+        
+</div>
+</div>
+    
+    <p>Итог: {{getPriceAll()}}.00$</p>
+</div>
+ <div v-else class="Basket">
         <div class="title">
             <h1>Корзина</h1>
             <p>{{getPriceAll()}}.00$</p>
@@ -143,7 +177,9 @@ app.component('basket', {
             </div>
         </div> 
         <p v-else>Корзина пуста</p>
-        <a href="/pages/check.php">Оформить заказ</a>
+        
+        <button v-if="data_basket.length !== 0" @click="saveOrder()" href="/pages/check.php">Оформить заказ</button>
+        <a v-else href="/index.php#catalog">Перейти в каталог</a>
     </div>`
 })
 

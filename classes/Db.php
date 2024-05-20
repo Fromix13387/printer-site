@@ -17,6 +17,14 @@ class Db
         'user' => 'root',
         'pass' => ''
     ];
+//    private array $data = [
+//        'host' => '10.16.0.1',
+//        'port' => '3306',
+//        'dbname' => 'db_demo',
+//        'charset' => 'utf8',
+//        'user' => 'admin',
+//        'pass' => 'b2&f0KRctlWn'
+//    ];
     public function __construct()  //метод подключения БД
     {
         try {
@@ -48,6 +56,10 @@ class Db
     public function getCategories(): bool|array
     {
         return $this->query('SELECT * FROM categories')->fetchAll();
+    }
+    public function getRoles(): bool|array
+    {
+        return $this->query('SELECT * FROM roles')->fetchAll();
     }
 
 }

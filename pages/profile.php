@@ -3,8 +3,11 @@
 
     require_once __DIR__ . '/../classes/Db.php';
     require_once __DIR__ . '/../classes/Users.php';
-
-    $users = new Users(new Db);
+    require_once __DIR__ . '/../classes/Orders.php';
+    $db = new Db;
+    $users = new Users($db);
+    $orders = new Orders($db);
+    $orders_data = $orders->getAllByLogin($_SESSION['login'])
 ?>
 
 <!doctype html>
@@ -84,6 +87,28 @@
             </div>
             <button name='btn-edit'>Редактировать</button>
         </form>
+        <h1>История покупок</h1>
+        <div class="order">
+            <?php
+            if (count($orders_data) <= 0) echo "<p>Совершите покупку и здесь появятся товары</p>";
+            foreach ($orders_data as $order) { ?>
+                <div>
+                    <img src="/assets/images/product/<?= $order['path'] ?>" alt="">
+                    <div>
+                        <div>
+                            <h1><?= $order['name_p'] ?></h1>
+                            <p><?= $order['created_at'] ?></p>
+                        </div>
+                        <p>Цена: <?= $order['price'] ?>.00$</p>
+                        <p>Количество: <?= $order['count_or'] ?> шт</p>
+                        <p>Стоимость: <?= $order['count_or'] * $order['price'] ?> .00$</p>
+                        <p>Статус: <?= $order['status'] ?></p>
+                    </div>
+                </div>
+             <?php   }
+            ?>
+
+        </div>
     </div>
     <?php include 'components/footer.php' ?>
 </div>

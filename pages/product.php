@@ -52,9 +52,12 @@
                             <h2 class="price"><?= $data['price'] ?>.00$</h2>
                         </div>
                     </div>
-                    <button v-if="getProductCount(<?= $data['product_id'] ?>) === 0"
-                            @click="add(<?= $data['product_id'] ?>)">Добавить в корзину
-                    </button>
+                    <?php
+                        if (isset($_SESSION['login'])) echo "<button v-if='getProductCount({$data['product_id']}) === 0' @click='add({$data['product_id']})'>Добавить в корзину</button>";
+                    else echo "<a v-if='getProductCount({$data['product_id']}) === 0' href='/pages/authorization.php'>Добавить в корзину</a>"
+                    ?>
+
+
                     <div v-cloak class="numeric" v-else>
                         <p class="btn" @click="remove(<?= $data['product_id'] ?>)">-</p>
                         <p>{{getProductCount(<?= $data['product_id'] ?>)}}</p>

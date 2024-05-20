@@ -161,7 +161,7 @@ img {
   font-weight: bold;
   font-size: 15px;
 }
-.products > .product > .info button {
+.products > .product > .info button, .products > .product > .info a {
   border-radius: 15px;
   text-align: center;
   background-color: #BF148F;
@@ -175,7 +175,7 @@ img {
   padding: 12px 20px;
   margin: 0 auto 0 auto;
 }
-.products > .product > .info button:hover {
+.products > .product > .info button:hover, .products > .product > .info a:hover {
   background-color: #8c0c68;
 }
 .products > .product > .info .price {

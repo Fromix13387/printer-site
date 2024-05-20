@@ -120,6 +120,11 @@ h1, h2, h3, h4, h5, h6, p {
     width: 95%;
   }
 }
+.bask .Basket {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 .bask .Basket > p {
   text-align: center;
   margin-top: 100px;
@@ -166,7 +171,6 @@ h1, h2, h3, h4, h5, h6, p {
   color: #BF148F;
 }
 .bask .Basket .cards {
-  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -217,7 +221,8 @@ h1, h2, h3, h4, h5, h6, p {
   background-color: rgba(119, 119, 119, 0.1);
   font-size: 14px;
 }
-.bask .Basket > a {
+.bask .Basket > button, .bask .Basket > a {
+  border: none;
   border-radius: 15px;
   text-align: center;
   background-color: #BF148F;
@@ -227,8 +232,10 @@ h1, h2, h3, h4, h5, h6, p {
   min-width: 150px;
   font-size: 16px;
   cursor: pointer;
+  margin: auto;
+  padding: 10px 20px;
 }
-.bask .Basket > a:hover {
+.bask .Basket > button:hover, .bask .Basket > a:hover {
   background-color: #8c0c68;
 }
 @media (width < 530px) {
@@ -240,6 +247,45 @@ h1, h2, h3, h4, h5, h6, p {
     max-height: 200px;
     padding: 0;
   }
+}
+.bask .check {
+  padding: 15px;
+  border-radius: 15px;
+  background-color: rgba(203, 161, 161, 0.22);
+}
+.bask .check > p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.bask .check .cards {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.bask .check .cards > div {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  max-width: 450px;
+}
+.bask .check .cards > div > div {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+}
+.bask .check .cards > div h1, .bask .check .cards > div p {
+  font-size: 20px;
+  font-weight: normal;
+}
+.bask .check .cards > div p {
+  font-family: Arial;
 }
 
 /*# sourceMappingURL=basket.css.map */

@@ -200,5 +200,49 @@ h1, h2, h3, h4, h5, h6, p {
 .profile > form input:focus {
   box-shadow: 0 0 0 1px #c42b31;
 }
+.profile .order {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile .order > div {
+  display: flex;
+  background-color: #FFCDCF;
+  border-radius: 15px;
+}
+.profile .order > div img {
+  min-width: 250px;
+  max-height: 200px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px 0 0 15px;
+}
+.profile .order > div > div {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.profile .order > div > div > div {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.profile .order > div > div h1 {
+  font-size: 20px;
+}
+.profile .order > div > div > * {
+  color: #614748;
+  font-size: 15px;
+}
+@media (width < 600px) {
+  .profile .order > div {
+    flex-direction: column;
+  }
+}
 
 /*# sourceMappingURL=profile.css.map */

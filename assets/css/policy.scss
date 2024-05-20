@@ -1,0 +1,42 @@
+@import "variable";
+@import "default";
+.policy {
+  @include widthMain;
+  ol {
+    display: table;
+    counter-reset: section;
+    list-style-type: none;
+  }
+
+  li {
+    display: table-row; /* Каждый элемент списка представляем как строку таблицы */
+    counter-increment: section;
+    &.one {
+      display: flex;flex-direction: column;
+      gap: 15px
+    }
+  }
+  h2 {
+    display: flex;
+    margin-top: 30px;
+  }
+  li {
+    &:not(.one)::before, > h2::before {
+      display: table-cell;
+      text-align: right;
+      padding-right: 15px;
+      content: counters(section, ".") ". ";
+
+    }
+    &:not(.one)::before {
+      padding: 10px 15px;
+    }
+    .one {
+      ol {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  }
+}

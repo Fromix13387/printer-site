@@ -18,17 +18,9 @@
     }
   }
   .products {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background-color: $bgAdmin;
-    padding: 25px 45px;
-    border-radius: 0 0 15px 15px;
+
+    @include modelAdmin;
     > div {
-      background-color: $cardAdmin;
-      padding: 15px;
-      display: flex;
-      gap: 15px;
       h2 {
         font-size: 20px;
       }
@@ -98,6 +90,126 @@
       flex-direction: column;
       gap: 5px;
 
+    }
+  }
+
+  > .users {
+    @include modelAdmin;
+    > div {
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      flex-wrap: wrap;
+      gap: 15px;
+      .users_form {
+        position: absolute;
+        content: "";
+        display: flex;
+        gap: 10px;
+        right: -8px;
+        top: -10px;
+        > button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+        }
+        > a , > button {
+          width: 20px;
+          height: 20px;
+        }
+      }
+      p {
+        font-family: Arial;
+      }
+    }
+
+  }
+
+  > .orders {
+    @include modelAdmin;
+    > div {
+      @media (width < 750px) {
+        flex-direction: column;
+        > div {
+          padding: 0 15px !important;
+        }
+      }
+      padding: 0;
+      position: relative;
+      > div {
+        padding: 20px 10px 0 0;
+        width: 100%;
+        > div {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+      >  img {
+        max-height: 200px;
+        background-color: white;
+        padding: 15px;
+      }
+      .order_form {
+        display: flex;
+        gap: 10px;
+        position: absolute;
+        content: "";
+        right: -8px;
+        top: -16px;
+        button {
+          cursor: pointer;
+          width: 35px;
+          height: 35px;
+          border: none;
+          background-color: transparent;
+        }
+      }
+    }
+
+  }
+
+  > .reviews {
+    @include modelAdmin;
+    > div {
+      position: relative;
+      flex-direction: column;
+      gap: 5px;
+      > div {
+
+      justify-content: space-between;
+        align-items: end;
+        display: flex;
+        width: 100%;
+        h2 {
+          font-size: 20px;
+        }
+        > div {
+          display: flex;
+          gap: 5px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+      >  img {
+        max-height: 200px;
+        background-color: white;
+        padding: 15px;
+      }
+      .review_form {
+        position: absolute;
+        content: "";
+        right: -8px;
+        top: -10px;
+        button {
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          border: none;
+          background-color: transparent;
+        }
+      }
     }
   }
 }

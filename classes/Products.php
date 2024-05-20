@@ -40,6 +40,14 @@ class Products
         return $this->db->queryAdd("DELETE FROM products WHERE product_id = ?", [$product_id]);
     }
 
+    public function saveOrder($ids_product, $count, $login)
+    {
+        for ($i = 0; $i < count($ids_product); $i++) {
+            $this->db->queryAdd('INSERT INTO orders (product_id, count, status, user_id) VALUES (?,?,?,(SELECT user_id FROM users WHERE login = ?))', [$ids_product[$i], $count[$i], 'Новый', $login]);
+        }
+
+        return true;
+    }
 
 
 }

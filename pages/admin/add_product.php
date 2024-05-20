@@ -1,5 +1,6 @@
 <?php
     session_start();
+if ($_SESSION['role'] !== 2) header('Location: /index.php');
     require_once "classes/Db.php";
     require_once "classes/Products.php";
     $db = new Db;
@@ -24,7 +25,7 @@
     <div class="admin">
         <?php include 'pages/admin/header.php' ?>
 
-        <form class="form" action="#" method="post" enctype='multipart/form-data'>>
+        <form class="form" action="#" method="post" enctype='multipart/form-data'>
             <?php
             if (isset($_POST['btn-add'])) {
                 $name = $_POST['name'];
