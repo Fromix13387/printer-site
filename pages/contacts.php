@@ -13,8 +13,8 @@ session_start();
 </head>
 <body>
 <div id="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../components/Top.php' ?>
+    <?php include __DIR__.'/../components/header.php' ?>
     <div class="contacts">
         <h1>Наши реквизиты</h1>
         <p class="description">
@@ -36,7 +36,7 @@ session_start();
         <iframe src='https://yandex.ru/map-widget/v1/?ll=61.402554%2C55.159897&z=11' width='100%' height='100%'
                 frameborder='1' allowfullscreen='true' style='position:relative;'></iframe>
     </div>
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../components/footer.php' ?>
 </div>
 <script src='/assets/js/vue.global.js'></script>
 <script src='/assets/js/main.js'></script>

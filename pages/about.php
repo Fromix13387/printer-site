@@ -14,8 +14,8 @@
 </head>
 <body>
 <div id="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../components/Top.php' ?>
+    <?php include __DIR__.'/../components/header.php' ?>
     <div class="about">
         <h1>О компании Copy star</h1>
 
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../components/footer.php' ?>
 </div>
 <script src='/assets/js/vue.global.js'></script>
 <script src='/assets/js/main.js'></script>

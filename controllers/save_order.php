@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once "classes/Db.php";
-require_once "classes/Products.php";
+require_once __DIR__."/../classes/Db.php";
+require_once __DIR__."/../classes/Products.php";
 $products  = new Products(new Db);
 $ids_product = explode(",", $_POST['ids']);
 $count = explode(',', $_POST['count']);

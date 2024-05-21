@@ -1,8 +1,8 @@
 <?php
 session_start();
 if ($_SESSION['role'] !== 2) header('Location: /index.php');
-require_once 'classes/Db.php';
-require_once 'classes/Users.php';
+require_once __DIR__.'/../../classes/Db.php';
+require_once __DIR__.'/../../classes/Users.php';
 
 $users = new Users(new Db);
 
@@ -20,10 +20,10 @@ $users = new Users(new Db);
 </head>
 <body>
 <div id="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../../components/Top.php' ?>
+    <?php include __DIR__.'/../../components/header.php' ?>
     <div class="admin">
-        <?php include 'pages/admin/header.php' ?>
+        <?php include __DIR__.'/../../pages/admin/header.php' ?>
         <div class="users">
             <?php
             if (isset($_POST['btn-delete'])) {
@@ -50,7 +50,7 @@ $users = new Users(new Db);
             ?>
         </div>
     </div>
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../../components/footer.php' ?>
 </div>
 <script src='/assets/js/vue.global.js'></script>
 <script src='/assets/js/main.js'></script>

@@ -1,8 +1,8 @@
 <?php
     session_start();
     if ($_SESSION['role'] !== 2) header('Location: /index.php');
-    require_once "classes/Db.php";
-    require_once "classes/Products.php";
+    require_once __DIR__."/../../classes/Db.php";
+    require_once __DIR__."/../../classes/Products.php";
 
     $products = new Products(new Db);
 
@@ -20,10 +20,10 @@
 </head>
 <body>
 <div id="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../../components/Top.php' ?>
+    <?php include __DIR__.'/../../components/header.php' ?>
     <div class="admin">
-        <?php include 'pages/admin/header.php' ?>
+        <?php include __DIR__.'/../../pages/admin/header.php' ?>
         <div class="add">
             <a href="/pages/admin/add_product.php">Добавить</a>
         </div>
@@ -65,7 +65,7 @@
 
         </div>
     </div>
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../../components/footer.php' ?>
 </div>
 <script src='/assets/js/vue.global.js'></script>
 <script src='/assets/js/main.js'></script>

@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include_once "classes/Db.php";
-    include_once "classes/Products.php";
-    include_once "classes/Reviews.php";
+    include_once __DIR__."/../classes/Db.php";
+    include_once __DIR__."/../classes/Products.php";
+    include_once __DIR__."/../classes/Reviews.php";
     $db = new Db;
     $product = new Products($db);
     $reviews = new Reviews($db);
@@ -30,8 +30,8 @@
 </head>
 <body>
 <div id="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../components/Top.php' ?>
+    <?php include __DIR__.'/../components/header.php' ?>
     <div class="products">
         <?php
         if (!$data) echo '<h1>Такого товара не существует</h1>';
@@ -53,16 +53,17 @@
                         </div>
                     </div>
                     <?php
-                        if (isset($_SESSION['login'])) echo "<button v-if='getProductCount({$data['product_id']}) === 0' @click='add({$data['product_id']})'>Добавить в корзину</button>";
-                    else echo "<a v-if='getProductCount({$data['product_id']}) === 0' href='/pages/authorization.php'>Добавить в корзину</a>"
+                        if (isset($_SESSION['login'])) echo "<button v-if='getProductCount({$data['product_id']}) === 0' @click='add({$data['product_id']})'>Добавить в корзину</button> 
+<div v-cloak class='numeric' v-else>
+                        <p class='btn' @click='remove({$data['product_id']})'>-</p>
+                    <p>{{getProductCount({$data['product_id']})}}</p>
+                    <p class='btn' @click='add({$data['product_id']})'>+</p>
+                </div>";
+                    else echo "<a  href='/pages/authorization.php'>Добавить в корзину</a>"
                     ?>
 
 
-                    <div v-cloak class="numeric" v-else>
-                        <p class="btn" @click="remove(<?= $data['product_id'] ?>)">-</p>
-                        <p>{{getProductCount(<?= $data['product_id'] ?>)}}</p>
-                        <p class="btn" @click="add(<?= $data['product_id'] ?>)">+</p>
-                    </div>
+
                 </div>
             </div>
             <div class="reviews">
@@ -100,7 +101,7 @@
         ?>
     </div>
 
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../components/footer.php' ?>
 
 </div>
 <script src='/assets/js/vue.global.js'></script>

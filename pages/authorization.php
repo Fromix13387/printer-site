@@ -15,8 +15,8 @@
 </head>
 <body>
 <div class="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../components/Top.php' ?>
+    <?php include __DIR__.'/../components/header.php' ?>
 
     <div class="authorization">
         <h1>Авторизация</h1>
@@ -57,7 +57,7 @@
             </div>
         </form>
     </div>
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../components/footer.php' ?>
 </div>
 <script src='/assets/js/vue.global.js'></script>
 <script src='/assets/js/main.js'></script>

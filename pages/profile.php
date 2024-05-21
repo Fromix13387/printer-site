@@ -22,8 +22,8 @@
 </head>
 <body>
 <div id="app">
-    <?php include 'components/Top.php' ?>
-    <?php include 'components/header.php' ?>
+    <?php include __DIR__.'/../components/Top.php' ?>
+    <?php include __DIR__.'/../components/header.php' ?>
     <div class="profile">
         <h1>Профиль</h1>
         <form action="#" method="post">
@@ -97,7 +97,7 @@
                     <div>
                         <div>
                             <h1><?= $order['name_p'] ?></h1>
-                            <p><?= $order['created_at'] ?></p>
+                            <p><?= $order['created_at_or'] ?></p>
                         </div>
                         <p>Цена: <?= $order['price'] ?>.00$</p>
                         <p>Количество: <?= $order['count_or'] ?> шт</p>
@@ -110,7 +110,7 @@
 
         </div>
     </div>
-    <?php include 'components/footer.php' ?>
+    <?php include __DIR__.'/../components/footer.php' ?>
 </div>
 <script src='/assets/js/vue.global.js'></script>
 <script src='/assets/js/main.js'></script>

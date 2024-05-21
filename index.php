@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'classes/Db.php';
-include 'classes/Products.php';
+include __DIR__.'/classes/Db.php';
+include __DIR__.'/classes/Products.php';
 $products = new Products(new Db);
 $row = $products->getProducts();
 $data = '';
@@ -139,8 +139,8 @@ if ($data == '') $data = '<h3 class="text-center">Товары отсутств�
 </head>
 <body>
    <div id="app">
-       <?php include 'components/Top.php' ?>
-       <?php include 'components/header.php' ?>
+       <?php include __DIR__.'/components/Top.php' ?>
+       <?php include __DIR__.'/components/header.php' ?>
        <div class="main">
            <h1>Новинки компании</h1>
            <section class='embla'>
@@ -187,8 +187,10 @@ if ($data == '') $data = '<h3 class="text-center">Товары отсутств�
                <h1 id="catalog">Каталог</h1>
                <div class='products'>
                    <?php
-                   foreach ($row as $item) { ?>
-                       <div class="card" :class="{activeProduct: getProductCount(<?= $item['product_id'] ?>) > 0}">
+
+                   foreach ($row as $item) {
+                       $str = isset($_SESSION['login']) ? ":class='{activeProduct: getProductCount({$item['product_id']}) > 0 }'" : '';?>
+                       <div class="card" <?=$str?>>
                            <img src="/assets/images/product/<?=$item['path']?>" alt="">
                            <div>
                                <h1><?= $item['name_p'] ?></h1>
@@ -207,8 +209,10 @@ if ($data == '') $data = '<h3 class="text-center">Товары отсутств�
                </div>
            </div>
        </div>
-       <?php include 'components/footer.php' ?>
+       <?php include __DIR__.'/components/footer.php' ?>
    </div>
+   <script src='/assets/js/vue.global.js'></script>
+   <script src='/assets/js/main.js'></script>
     <script src='https://unpkg.com/embla-carousel/embla-carousel.umd.js'></script>
     <script src='https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js'></script>
     <script type='text/javascript'>
@@ -262,8 +266,7 @@ if ($data == '') $data = '<h3 class="text-center">Товары отсутств�
         )
         emblaApi.on('destroy', removeDotBtnsAndClickHandlers)
     </script>
-   <script src='/assets/js/vue.global.js'></script>
-   <script src='/assets/js/main.js'></script>
+
 </body>
 </html>
 	
